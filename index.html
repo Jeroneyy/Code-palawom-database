@@ -13,32 +13,50 @@
     </head>
     <body class="ubuntu-mono-regular">
       <h1>TERMUX</h1>
+        <!-- -->
       <section>
         <h5>Start Database Command</h5>
         <p>mysqld_safe</p>
       </section>
+        <!-- -->
       <section>
         <h5>Enter to Database</h5>
         <p style="border-bottom: 1px dashed #12345630; padding-bottom: 1vh;">mariadb -u root</p>
         <h5 style="background-color: transparent;  margin: 0vh 0vh 0vh 0vh;">Use this command for password</h5>
         <p  style="margin: 0vh 0vh 1vh 0vh;">mariadb -u root -p</p>
       </section>
+        <!-- -->
       <section>
         <h5>Show existing database</h5>
         <p>SHOW DATABASES;
       </section>
+        <!-- -->
       <section>
         <h5>Create a database</h5>
         <pre><code class="language-sql">CREATE DATABASE db_name;</code></pre>
       </section>
+        <!-- -->
       <section>
         <h5>Use a database</h5>
         <pre><code class="language-sql">USE db_name</code></pre>
       </section>
+        <!-- -->
       <section>
         <h5>Create a table</h5>
         <p>CREATE TABLE db_name (Id datatype(length), Name datatype(length));</p>
         <pre><code class="language-sql">CREATE TABLE myDb (Id int(16), Name varchar(50));</code></pre>
+      </section>
+        <!-- -->
+      <section>
+        <h5>Insert a value to a Table</h5>
+        <p>CREATE TABLE table_name VALUES (firstColumn, secondColumn);</p>
+        <pre><code class="language-sql">INSERT INTO myDb VALUES ("This is", "an example");</code></pre>
+      </section>
+        <!-- -->
+      <section>
+        <h5>Alter Table</h5>
+        <p>ALTER TABLE table_name ADD COLUMN column_name datatype(length);</p>
+        <pre><code class="language-sql">ALTER TABLE myDb ADD COLUMN DateRegistered varchar(50);</code></pre>
       </section>
     </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
