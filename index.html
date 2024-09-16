@@ -13,6 +13,7 @@
     </head>
     <body class="ubuntu-mono-regular">
       <div id="TermuxB"></div>
+      <div class="searchWrapper" style="position: absolute; top: 45px;"><input id="search" list="searchEngine" type="search" onkeyup="searching()" onsearch="searching()"></div>
       <h1 id="TermuxT">MySQL</h1>
         <!-- -->
       <section>
@@ -34,7 +35,7 @@
         <!-- -->
       <section>
         <h5>Create a database</h5>
-        <pre><code class="language-sql">CREATE <span class="red">DATABASE</span> db_name;</code></pre>
+        <pre><code class="language-sql">CREATE DATABASE db_name;</code></pre>
       </section>
         <!-- -->
       <section>
@@ -85,6 +86,8 @@
         <p>or</p>
         <pre><code class="language-sql">ALTER TABLE db_name MODIFY COLUMN col_name INT(16) PRIMARY KEY;</code></pre>
       </section>
+      
+      <datalist id="searchEngine"></datalist>
     </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.6.0/dist/highlightjs-line-numbers.min.js"></script>
@@ -108,5 +111,32 @@
           TermuxTop.style.color = "#FFFFFF";
         }
       });
+  
+      let recommendationsList = document.getElementById("searchEngine");
+      let isSearched = false;
+      function searching(){
+        var allSections = document.getElementsByTagName("section");
+        var searchText = document.getElementById("search").value.toUpperCase();
+        var textContents;
+        allSections = Array.from(allSections);
+        for(let i = 0; i < allSections.length; i++){
+          textContents = allSections[i].getElementsByTagName("h5")[0].textContent;
+          if(textContents.toUpperCase().indexOf(searchText) > -1){
+            allSections[i].style.display = "block";
+          }else{
+            allSections[i].style.display = "none";
+          }
+          
+          if(!isSearched){
+            let createOption;
+            createOption = document.createElement("option");
+            createOption.value = textContents;
+            createOption.innerHTML = textContents;
+          
+            recommendationsList.appendChild(createOption);
+          }
+        }
+        isSearched = true;
+      }
     </script>
 </html>
