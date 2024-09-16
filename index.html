@@ -45,7 +45,7 @@
       <section>
         <h5>Create a table</h5>
         <p>CREATE TABLE db_name (Id datatype(length), Name datatype(length));</p>
-        <pre><code class="language-sql">CREATE TABLE db_name (Id int(16), Name varchar(50));</code></pre>
+        <pre><code class="language-sql">CREATE TABLE db_name (Id INT(16), Name VARCHAR(50));</code></pre>
       </section>
         <!-- -->
       <section>
@@ -57,7 +57,23 @@
       <section>
         <h5>Alter Table Add Column</h5>
         <p>ALTER TABLE table_name ADD COLUMN column_name datatype(length);</p>
-        <pre><code class="language-sql">ALTER TABLE db_name ADD COLUMN DateRegistered varchar(50);</code></pre>
+        <pre><code class="language-sql">ALTER TABLE db_name ADD COLUMN DateRegistered VARCHAR(50);</code></pre>
+      </section>
+        <!-- -->
+      <section>
+        <h5>Alter Table Delete Column</h5>
+        <p>ALTER TABLE table_name DROP COLUMN column_name</p>
+        <pre><code class="language-sql">ALTER TABLE db_name DROP COLUMN Address</code></pre>
+      </section>
+        <!-- -->
+      <section>
+        <h5>Alter Table Add in First Column</h5>
+        <pre><code class="language-sql">ALTER TABLE db_name ADD COLUMN Id INT(16) FIRST</code></pre>
+      </section>
+        <!-- -->
+      <section>
+        <h5>Alter Table Add in Specific Column</h5>
+        <pre><code class="language-sql">ALTER TABLE db_name ADD COLUMN Name VARCHAR(50) BEFORE Id;</code></pre>
       </section>
     </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
