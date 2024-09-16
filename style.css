@@ -11,4 +11,5 @@ section {
   outline: 1px solid #00000030;
   margin-top: 2vh;
   border: 1px solid #00000050;
+  display: block;
 }
