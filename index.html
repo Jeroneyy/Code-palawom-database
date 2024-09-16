@@ -12,7 +12,8 @@
         <title>CODE PALAWOM DATABASE</title>
     </head>
     <body class="ubuntu-mono-regular">
-      <h1>TERMUX</h1>
+      <div id="TermuxB"></div>
+      <h1 id="TermuxT">TERMUX</h1>
         <!-- -->
       <section>
         <h5>Start Database Command</h5>
@@ -33,7 +34,7 @@
         <!-- -->
       <section>
         <h5>Create a database</h5>
-        <pre><code class="language-sql">CREATE DATABASE db_name;</code></pre>
+        <pre><code class="language-sql">CREATE <span class="red">DATABASE</span> db_name;</code></pre>
       </section>
         <!-- -->
       <section>
@@ -44,24 +45,42 @@
       <section>
         <h5>Create a table</h5>
         <p>CREATE TABLE db_name (Id datatype(length), Name datatype(length));</p>
-        <pre><code class="language-sql">CREATE TABLE myDb (Id int(16), Name varchar(50));</code></pre>
+        <pre><code class="language-sql">CREATE TABLE db_name (Id int(16), Name varchar(50));</code></pre>
       </section>
         <!-- -->
       <section>
         <h5>Insert a value to a Table</h5>
         <p>CREATE TABLE table_name VALUES (firstColumn, secondColumn);</p>
-        <pre><code class="language-sql">INSERT INTO myDb VALUES ("This is", "an example");</code></pre>
+        <pre><code class="language-sql">INSERT INTO db_name VALUES ("This is", "an example");</code></pre>
       </section>
         <!-- -->
       <section>
         <h5>Alter Table</h5>
         <p>ALTER TABLE table_name ADD COLUMN column_name datatype(length);</p>
-        <pre><code class="language-sql">ALTER TABLE myDb ADD COLUMN DateRegistered varchar(50);</code></pre>
+        <pre><code class="language-sql">ALTER TABLE db_name ADD COLUMN DateRegistered varchar(50);</code></pre>
       </section>
     </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.6.0/dist/highlightjs-line-numbers.min.js"></script>
     <script type="text/javascript">
       hljs.highlightAll();
+      
+      const TermuxBg = document.getElementById("TermuxB");
+      const TermuxTop = document.getElementById("TermuxT");
+      window.addEventListener('scroll', function() {
+        if(scrollY > 10 && scrollY < 53){
+          TermuxBg.style.backgroundColor = "#000000" +scrollY;
+        }else if(scrollY > 52){
+          TermuxBg.style.backgroundColor = "#000000";
+        }else{
+          TermuxBg.style.backgroundColor = "#00000000";
+        }
+        
+        if(scrollY < 53){
+          TermuxTop.style.color = "#000000";
+        }else if(scrollY > 53){
+          TermuxTop.style.color = "#FFFFFF";
+        }
+      });
     </script>
 </html>
