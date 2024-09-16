@@ -4,23 +4,39 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.css">
         <link rel="stylesheet" href="./style.css">
         <title>CODE PALAWOM DATABASE</title>
     </head>
     <body>
       <h1>TERMUX</h1>
-      <div class="section">
-        <p>Start Database Command</p>
-        <hr>
+      <section>
+        <h5>Start Database Command</h5>
         <p>mysqld_safe</p>
-      </div>
-      <div class="section">
-        <p>Enter to Database</p>
-        <hr>
-        <p>mariadb -u root</p>
-        <br>
-        <p>Use this command for password</p>
-        <p>mariadb -u root -p</p>
-      </div>
+      </section>
+      <section>
+        <h5>Enter to Database</h5>
+        <p style="border-bottom: 1px dashed #12345630; padding-bottom: 1vh;">mariadb -u root</p>
+        <h5 style="background-color: transparent;  margin: 0vh 0vh 0vh 0vh;">Use this command for password</h5>
+        <p  style="margin: 0vh 0vh 1vh 0vh;">mariadb -u root -p</p>
+      </section>
+      <section>
+        <h5>Show existing database</h5>
+        <p>SHOW DATABASES;
+      </section>
+      <section>
+        <h5>Use a database</h5>
+        <p>USE db_name</p>
+      </section>
+      <section>
+        <h5>Create a table</h5>
+        <p>CREATE TABLE db_name (Id datatype(length), Name datatype(length));</p>
+        <pre><code class="language-sql">CREATE TABLE myDb (Id int(16), Name varchar(50));</code></pre>
+      </section>
     </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.6.0/dist/highlightjs-line-numbers.min.js"></script>
+    <script type="text/javascript">
+      hljs.highlightAll();
+    </script>
 </html>

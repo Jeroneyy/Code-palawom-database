@@ -5,10 +5,33 @@
 
 body {
   background-color: #F6FEFF;
+  width: 95vw;
+  margin: auto;
 }
 
-.section {
-  outline: 1px solid #00000030;
+h1 {
+  text-align: center;
   margin-top: 2vh;
-  border: 1px solid #00000050;
+}
+
+section {
+  overflow: hidden;
+  margin-top: 2vh;
+  border-radius: 5px;
+  border-bottom: 1px solid #12345630;
+  border-left: 1px solid #12345630;
+  border-right: 1px solid #12345630;
+}
+
+h5 {
+  background-color: #12345650;
+  border-radius: 5px;
+  padding-block: 5px;
+  padding-inline: 5px;
+}
+
+p {
+  padding-inline: 2vw;
+  font-size: 13px;
+  margin: 1vh 0vh 1vh 0vh;
 }
