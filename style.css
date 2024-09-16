@@ -42,4 +42,6 @@ p {
   padding-inline: 2vw;
   font-size: 13px;
   margin: 1vh 0vh 1vh 0vh;
+  overflow-x: scroll;
+  white-space: nowrap;
 }
