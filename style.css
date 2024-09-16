@@ -6,3 +6,7 @@
 body {
   background-color: #F6FEFF;
 }
+
+section {
+  outline: 1px solid #00000030;
+}
