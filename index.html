@@ -79,6 +79,8 @@
         <h5>Alter Table Add Primary Key</h5>
         <p>Primary Key is used for preventing existing data from being submitted twice</p>
         <pre><code class="language-sql">ALTER TABLE db_name ADD CONSTRAINT PRIMARY KEY(column_name);</code></pre>
+        <p>or</p>
+        <pre><code class="language-sql">ALTER TABLE db_name MODIFY COLUMN col_name INT(16) PRIMARY KEY;</code></pre>
       </section>
     </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
