@@ -35,6 +35,7 @@ h5 {
   padding-block: 5px;
   padding-inline: 5px;
   overflow-x: scroll;
+  white-space: nowrap;
 }
 
 p {
