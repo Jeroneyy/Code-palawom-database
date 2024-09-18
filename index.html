@@ -14,7 +14,7 @@
     <body class="ubuntu-mono-regular">
       <div id="TermuxB"></div>
       <div class="searchWrapper" style="position: absolute; top: 45px;"><input id="search" list="searchEngine" type="search" onkeyup="searching()" onsearch="searching()"></div>
-      <div class="noResult"><p>No Results Found...</p></div>
+      <div class="noResult"><p>Coming Soon...</p></div>
       <h1 id="TermuxT">MySQL</h1>
         <!-- -->
       <section>
@@ -119,7 +119,7 @@
         var allSections = document.getElementsByTagName("section");
         var searchText = document.getElementById("search").value.toUpperCase();
         var textContents;
-        var resultCount = 0;
+        let countResults = 0;
         allSections = Array.from(allSections);
         for(let i = 0; i < allSections.length; i++){
           textContents = allSections[i].getElementsByTagName("h5")[0].textContent;
@@ -127,7 +127,7 @@
             allSections[i].style.display = "block";
           }else{
             allSections[i].style.display = "none";
-            resultCount++;
+            countResults++;
           }
           
           if(!isSearched){
@@ -135,14 +135,15 @@
             createOption = document.createElement("option");
             createOption.value = textContents;
             createOption.innerHTML = textContents;
+          
             recommendationsList.appendChild(createOption);
           }
-
-          if(resultCount == allSection.length){
-              document.querySelector(".noResult").style.visibility = "visible";
-          }else{
-              document.querySelector(".noResult").style.visibility = "hidden";
-          }
+        }
+        
+        if(countResults == allSections.length){
+          document.querySelector(".noResult").style.visibility = "visible";
+        }else{
+          document.querySelector(".noResult").style.visibility = "hidden";
         }
         isSearched = true;
       }
