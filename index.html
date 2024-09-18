@@ -139,7 +139,9 @@
           }
 
           if(searchCount == allSection.length){
-              document.getElementById("noResult").style.visibility = "visible";
+              document.querySelector(".noResult").style.visibility = "visible";
+          }else{
+              document.querySelector(".noResult").style.visibility = "hidden";
           }
         }
         isSearched = true;
